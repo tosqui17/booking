@@ -1,0 +1,13 @@
+.container{
+  text-align: center;
+}
+
+.btn-secondary {
+  color: white;
+  background-color:#42b72a;
+  border-radius: 10px;
+}
+.btn-primary {
+  border-radius: 10px;
+}
+

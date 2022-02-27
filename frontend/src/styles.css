@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.jumbotron{
+  border-radius: 20px;
+}
+
+.card{
+  border-radius: 20px;
+}

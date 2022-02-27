@@ -1,0 +1,28 @@
+<div id="app">
+  <nav class="navbar fixed-top navbar-expand navbar-dark bg-dark py-md-3">
+    <a href="/" class="navbar-brand">Booking App</a>
+    <ul class="nav nav-pills mr-auto" routerLinkActive="active">
+      <li class="nav-item" id="user" >
+        <a href="/user" class="nav-link active" *ngIf="isLoggedIn" routerLink="user">UserBoard</a>
+      </li>
+      <li class="nav-item" id="manager" *ngIf="showModeratorBoard">
+        <a href="/manager" class="nav-link active" routerLink="manager">ManagerBoard</a>
+      </li>
+      <li class="nav-item" id="admin" *ngIf="showAdminBoard">
+        <a class="nav-link active" routerLink="admin">AdminBoard</a>
+      </li>
+    </ul>
+    <ul class="nav nav-pills ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item profile" id="Profile">
+        <a href="/profile" class="nav-link active" routerLink="profile"> <span class="glyphicon glyphicon-user"> </span>Profile</a>
+      </li>
+      <li class="nav-item" id="Logout">
+        <a class="nav-link active"  (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container" id="page">
+    <router-outlet></router-outlet>
+  </div>
+</div>

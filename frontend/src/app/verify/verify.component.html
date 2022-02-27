@@ -1,0 +1,27 @@
+<div class="container" *ngIf="isVerified && message.length > 0">
+  <header class="jumbotron">
+      <div class="alert alert-success">
+        {{message}}
+      </div>
+      <h1 class="display-4">Congratulations!
+      <span class="badge badge-success"> Verified </span></h1>
+      <p class="lead">Now you can go.</p>
+      <hr class="my-4">
+      <br>
+      <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+  </header>
+</div>
+
+<div class="container" *ngIf="!isVerified && message.length > 0">
+  <header class="jumbotron">
+      <div class="alert alert-danger">
+        {{message}}
+      </div>
+      <h1 class="display-4">Oh no!
+      <span class="badge badge-danger"> Something goes wrong </span></h1>
+      <p class="lead">A new email was sent with a new activation button</p>
+      <hr class="my-4">
+      <br>
+      <a class="btn btn-primary btn-lg" href="/home" role="button">Return Home</a>
+  </header>
+  </div>

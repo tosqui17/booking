@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="jumbotron">
+      <div class="alert alert-success" *ngIf='showBookedBanner && message.includes("confirmed on")'>
+        {{message}}
+      </div>
+      <div class="alert alert-danger" *ngIf='showBookedBanner && !message.includes("confirmed on")'>
+        {{message}}!
+      </div>
+      <h1 class="display-4">Here, you can make reservations for your customer!
+      <span class="badge badge-primary ">Nothing special</span></h1>
+      <h2 class="display-4">But.. </h2>
+      <p class="lead">User must be registered in our systems.</p>
+      <hr class="my-4">
+      <div class="alert-danger" *ngIf="showHour && username.length==0"> Username is required</div>
+      <input
+          type="text"
+          class="form-control"
+          name="username"
+          [(ngModel)]="username"
+          required
+          minlength="6"
+          maxlength="20"
+          placeholder="Username or Email"
+        />
+        <br>
+      <select class="form-select">
+        <option selected> Select a date </option>
+        <option *ngFor="let d of datesHours" (click)="onSelectDate(d)">{{d.date}}</option>
+      </select>
+      <br>
+      <select *ngIf=showHour class="form-select">
+        <option selected> Select an hour </option>
+        <option *ngFor="let h of data.hours" (click)="onSelectHour(h)">{{h.substr(0,5)}}</option>
+      </select>
+      <br>
+      <p class="lead" *ngIf="showButton && username.length >3" (click)="onReserve(data.date,hour)">
+        <a class="btn btn-primary btn-lg" role="button">Reserve</a>
+      </p>
+    </div>
+
+
+    <hr>
+
+
+    <div class="jumbotron">
+      <div class="alert alert-success" *ngIf='showUnlockedBanner && message.includes("now unlocked")'>
+        {{message}}
+      </div>
+      <div class="alert alert-danger" *ngIf='showUnlockedBanner && !message.includes("now unlocked")'>
+        {{message}}
+      </div>
+      <h1 class="display-4">Here, you can unlock customers that failed more than 5 password attempts.
+      <span class="badge bg-warning text-dark">SAFE?</span></h1>
+      <p class="lead">User must be registered in our systems, obviously.</p>
+      <hr class="my-4">
+      <input
+      type="text"
+      class="form-control"
+      name="username"
+      [(ngModel)]="username2"
+      required
+      minlength="6"
+      maxlength="20"
+      placeholder="Username or Email"
+       />
+        <br>
+      <p *ngIf="username2.length >3"class="lead" (click)="onUnlock()">
+        <a class="btn btn-warning btn-lg" role="button">Unlock</a>
+      </p>
+    </div>
+
+    <hr>
+
+    <div class="jumbotron">
+      <div class="alert alert-success" *ngIf='showDeletedBanner && message.includes("is now deleted")'>
+        {{message}}
+      </div>
+      <div class="alert alert-danger" *ngIf='showDeletedBanner && !message.includes("is now deleted")'>
+        {{message}}
+      </div>
+      <h1 class="display-4"> Here, you can delete reservations for your customer!
+      <span class="badge badge-danger "> BADGUY </span></h1>
+      <h2 class="display-4"> But.. </h2>
+      <p class="lead">Reservation must exists.</p>
+      <hr class="my-4">
+      <select class="form-select">
+        <option selected> Select a date </option>
+        <option *ngFor="let d of reservedDatesHours" (click)="onSelectDate2(d)">{{d.date}}</option>
+
+      </select>
+      <br>
+      <select *ngIf=showHour class="form-select">
+        <option selected>Select an hour</option>
+        <option *ngFor="let h of data.hours" (click)="onSelectHour(h)">{{h.substr(0,5)}}</option>
+      </select>
+      <br>
+      <p class="lead" *ngIf="showButton" (click)="onDelete(data.date,hour)">
+        <a class="btn btn-danger btn-lg" role="button">Delete</a>
+      </p>
+    </div>
+</div>
+
+

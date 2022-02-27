@@ -1,0 +1,117 @@
+body{margin-bottom:0px;}
+.social-icon.social li a {
+    color: #1174d8;
+    border-color: #adb5bd;
+}
+.navbar-brand{
+    color: #fbff00;
+    font-size:x-large;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #0d6efd;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 20px;
+
+}
+
+
+.nav-pills #SignUp .nav-link.active, .nav-pills .show > .nav-link {
+  color: rgb(0, 0, 0);
+  background-color: #ff0080;
+  margin-left:10px;
+  margin-left:10px;
+}
+
+.nav-pills #Logout .nav-link.active, .nav-pills .show > .nav-link {
+  color: rgb(0, 0, 0);
+  background-color: #f34;
+  margin-left:10px;
+  margin-left:10px;
+}
+.nav-pills #Profile .nav-link.active, .nav-pills .show > .nav-link {
+  color: rgb(0, 0, 0);
+  background-color: #00df55;
+  margin-left:10px;
+  margin-left:10px;
+}
+
+.nav-pills #Login .nav-link.active, .nav-pills .show > .nav-link {
+  color: black;
+  background-color: #3fc800;
+  margin-left:10px;
+  margin-left:10px;
+}
+
+.nav-pills #user .nav-link.active, .nav-pills .show > .nav-link {
+  color: white;
+  background-color: #3a9bdc;
+  margin-left:10px;
+  margin-left:10px;
+}
+
+.nav-pills #admin .nav-link.active, .nav-pills .show > .nav-link {
+  color: white;
+  background-color: #1260cc;
+  margin-left:10px;
+  margin-left:10px;
+}
+
+.nav-pills #manager .nav-link.active, .nav-pills .show > .nav-link {
+  color: white;
+  background-color: #5579c6;
+  margin-left:10px;
+  margin-left:10px;
+}
+
+
+
+.social-icon li a {
+    color: #3c4858;
+    border: 1px solid #3c4858;
+    display: inline-block;
+    height: 32px;
+    text-align: center;
+    font-size: 15px;
+    width: 32px;
+    line-height: 27px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+.rounded {
+    border-radius: 5px !important;
+}
+footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+
+footer .logo-footer {
+  font-size: 28px;
+}
+
+footer.footer-bar {
+  padding: 30px 0;
+  border-top: 1px solid #495057;
+}
+
+footer .footer-text {
+  color: #adb5bd;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+footer .footer-text:hover {
+  color: #dee2e6;
+}
+
+.container{
+  margin-top: 85px;
+}
+

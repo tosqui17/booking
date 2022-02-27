@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="jumbotron">
+    <div
+      class="alert alert-success"
+      *ngIf="showAddedBanner && message.includes('a holiday')"
+    >
+      {{ message }}
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="showAddedBanner && !message.includes('a holiday')"
+    >
+      {{ message }}
+    </div>
+    <h1 class="display-4">
+      Here, you can add an holiday!
+      <span class="badge badge-success">Oh yes!</span>
+    </h1>
+    <p class="lead">Bettery stay home :)</p>
+    <hr class="my-4" />
+    <input
+      type="text"
+      class="form-control"
+      name="date"
+      [(ngModel)]="date"
+      required
+      placeholder="yyyy-mm-dd"
+      (click)="reset()"
+    />
+    <br />
+    <p *ngIf="date.length==10"class="lead" (click)="onAdd()">
+      <a class="btn btn-success btn-lg" role="button">Add Holiday</a>
+    </p>
+  </div>
+
+  <div class="jumbotron">
+    <div
+      class="alert alert-success"
+      *ngIf="showEscalateBanner && message.includes('now manager')"
+    >
+      {{ message }}
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="showEscalateBanner && !message.includes('now manager')"
+    >
+      {{ message }}
+    </div>
+    <h1 class="display-4">
+      Here, you can escalate your customer privilege.
+      <span class="badge bg-warning text-dark">Become a manager!</span>
+    </h1>
+    <p class="lead">User must be registered in our systems, obviously.</p>
+    <hr class="my-4" />
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      [(ngModel)]="username"
+      requir
+      minlength="6"
+      maxlength="20"
+      placeholder="Username or Email"
+      (click)="reset()"
+    />
+    <br />
+    <p *ngIf="username.length>3"class="lead" (click)="onEscalate()">
+      <a class="btn btn-warning btn-lg" role="button">Escalate Privilege</a>
+    </p>
+  </div>
+
+  <div class="jumbotron">
+    <div
+      class="alert alert-danger"
+      *ngIf="reservations.length === 0 && showError"
+    >
+      No reservations {{ message }}
+    </div>
+    <h1 class="display-4">
+      Here, you can see which hour are reserved!
+      <span class="badge badge-success">WORK!</span>
+    </h1>
+    <hr class="my-4" />
+    <input
+      type="text"
+      class="form-control"
+      name="date2"
+      [(ngModel)]="date2"
+      required
+      placeholder="yyyy-mm-dd"
+      (click)="reset()"
+    />
+    <br />
+    <p *ngIf="date2.length==10" class="lead" (click)="retrieve()">
+      <a class="btn btn-success btn-lg" role="button">List</a>
+    </p>
+  </div>
+  <table class="table" *ngIf="reservations.length > 0">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Date</th>
+        <th scope="col">Hour</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ reservation.firstName }}</td>
+        <td>{{ reservation.lastName }}</td>
+        <td>{{ reservation.date }}</td>
+        <td>{{ reservation.hour }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
